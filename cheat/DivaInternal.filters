@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{8c8488ce-183e-41e2-bfae-4b39fb8e9c67}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{bcdc7311-ad6a-41d3-b453-33b3e974fad0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\detours">
+      <UniqueIdentifier>{307d7541-df30-4cc9-91d2-65fd5d5d82b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\imgui">
+      <UniqueIdentifier>{0edc6f09-32f6-4a50-8370-bfb5d1898155}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appdata">
+      <UniqueIdentifier>{7c2c0557-7bbc-4d6b-afdf-a43a77b4d752}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="features">
+      <UniqueIdentifier>{745e433a-4d2c-4e00-8066-c94dd7c95d3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\magic_enum">
+      <UniqueIdentifier>{2a119d21-8c9d-4511-8a47-58d1fc8f7710}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\UnityResolve">
+      <UniqueIdentifier>{43f0f444-1a9b-41d8-99cc-395a2a4292dc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\DivaInternal.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="vendor\detours\detours-x64.lib">
+      <Filter>vendor\detours</Filter>
+    </Library>
+    <Library Include="vendor\detours\detours-x86.lib">
+      <Filter>vendor\detours</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="vendor\detours\detours.h">
+      <Filter>vendor\detours</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\detours\detver.h">
+      <Filter>vendor\detours</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\imgui\misc\cpp\imgui_stdlib.h">
+      <Filter>vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\imgui\imconfig.h">
+      <Filter>vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\imgui\imgui.h">
+      <Filter>vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\imgui\imgui_internal.h">
+      <Filter>vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\imgui\backends\imgui_impl_dx11.h">
+      <Filter>vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\imgui\backends\imgui_impl_dx12.h">
+      <Filter>vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\imgui\backends\imgui_impl_win32.h">
+      <Filter>vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\magic_enum\include\magic_enum\magic_enum.hpp">
+      <Filter>vendor\magic_enum</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\magic_enum\include\magic_enum\magic_enum_all.hpp">
+      <Filter>vendor\magic_enum</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\magic_enum\include\magic_enum\magic_enum_containers.hpp">
+      <Filter>vendor\magic_enum</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\magic_enum\include\magic_enum\magic_enum_flags.hpp">
+      <Filter>vendor\magic_enum</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\magic_enum\include\magic_enum\magic_enum_format.hpp">
+      <Filter>vendor\magic_enum</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\magic_enum\include\magic_enum\magic_enum_fuse.hpp">
+      <Filter>vendor\magic_enum</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\magic_enum\include\magic_enum\magic_enum_iostream.hpp">
+      <Filter>vendor\magic_enum</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\magic_enum\include\magic_enum\magic_enum_switch.hpp">
+      <Filter>vendor\magic_enum</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\magic_enum\include\magic_enum\magic_enum_utility.hpp">
+      <Filter>vendor\magic_enum</Filter>
+    </ClInclude>
+    <ClInclude Include="res\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\handlers\abstracteventhandler.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\joins\abstracteventjoin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\cheat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\Gui\utils\color.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigEntry.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\Gui\fonts\cousine.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\Gui\fonts\DejaVuSansMono.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\Backend\DX11Hook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\Backend\DX12Hook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\event.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\handlers\eventhandlerptr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\joins\eventjoinwrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\joins\eventjoinwrapper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\handlers\functoreventhandler.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game-utils.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\Gui\gui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\Gui\utils\gui-util.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\handlers\handlercast.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\joins\handlereventjoin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\joins\handlereventjoin.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\appdata\helpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HookManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hotkey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\appdata\il2cpp-api-functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\appdata\il2cpp-api-functions-ptr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\appdata\il2cpp-appdata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\appdata\il2cpp-functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\appdata\il2cpp-init.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\appdata\il2cpp-metadata-version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\appdata\il2cpp-types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\appdata\il2cpp-types-ptr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\handlers\helpers\innerholder.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\helpers\is_equatable.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Memory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\handlers\methodeventhandler.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Module.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModuleManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\handlers\helpers\objectsaver.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\vars.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\Gui\fonts\Rubik.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HotkeyManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\UnityResolve\UnityResolve.hpp">
+      <Filter>vendor\UnityResolve</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\features\TimeScale.h">
+      <Filter>features</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\features\SkipIntroMovie.h">
+      <Filter>features</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\features\PlayerSpeed.h">
+      <Filter>features</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\features\NoCooldown.h">
+      <Filter>features</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\features\MobVacuum.h">
+      <Filter>features</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\features\MissionTime.h">
+      <Filter>features</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\features\GodMode.h">
+      <Filter>features</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\features\FPSUnlock.h">
+      <Filter>features</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\features\FovChanger.h">
+      <Filter>features</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\features\EntityManager.h">
+      <Filter>features</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\features\DumbEnemies.h">
+      <Filter>features</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\features\DisableWebView.h">
+      <Filter>features</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\features\DamageHack.h">
+      <Filter>features</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cheat\features\Debug.h">
+      <Filter>features</Filter>
+    </ClInclude>
+    <ClInclude Include="src\methods\UnityEngine.CoreModule.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\methods\Assembly-CSharp.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\methods\mscorlib.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="vendor\imgui\misc\cpp\imgui_stdlib.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui_draw.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui_tables.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui_widgets.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\backends\imgui_impl_dx11.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\backends\imgui_impl_dx12.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\backends\imgui_impl_win32.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\events\joins\abstracteventjoin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cheat\cheat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\Backend\DX11Hook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\Backend\DX12Hook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\events\joins\eventjoinwrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\events.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\Gui\gui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\Gui\utils\gui-util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\appdata\helpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hotkey.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\appdata\il2cpp-init.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Memory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cheat\features\TimeScale.cpp">
+      <Filter>features</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cheat\features\SkipIntroMovie.cpp">
+      <Filter>features</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cheat\features\PlayerSpeed.cpp">
+      <Filter>features</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cheat\features\NoCooldown.cpp">
+      <Filter>features</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cheat\features\MobVacuum.cpp">
+      <Filter>features</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cheat\features\GodMode.cpp">
+      <Filter>features</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cheat\features\FPSUnlock.cpp">
+      <Filter>features</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cheat\features\FovChanger.cpp">
+      <Filter>features</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cheat\features\MissionTime.cpp">
+      <Filter>features</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cheat\features\EntityManager.cpp">
+      <Filter>features</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cheat\features\DumbEnemies.cpp">
+      <Filter>features</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cheat\features\DisableWebView.cpp">
+      <Filter>features</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cheat\features\Debug.cpp">
+      <Filter>features</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cheat\features\DamageHack.cpp">
+      <Filter>features</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,42 @@
+name: Release
+on:
+  push:
+    tags:
+      # Match any new tag
+      - '*'
+env:
+  PROJECT_FILE_PATH: ./cheat/DivaInternal.vcxproj
+  BUILD_CONFIGURATION: Release
+  PLATFORM: x64
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4.1.1
+      with:
+        submodules: recursive
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.1
+    - name: Build
+      run: |
+        msbuild ${{ env.PROJECT_FILE_PATH }} /p:Configuration=${{ env.BUILD_CONFIGURATION }} /p:Platform=${{ env.PLATFORM }}
+    
+    # Get the tag name
+    - name: Get tag name
+      id: get_tag
+      run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+      shell: bash
+    
+    # Upload DLL directly to the GitHub release
+    - name: Upload Release Asset
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ./cheat/bin/Release-x64/DivaInternal.dll
+        name: Release ${{ steps.get_tag.outputs.TAG }}
+        tag_name: ${{ steps.get_tag.outputs.TAG }}
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
