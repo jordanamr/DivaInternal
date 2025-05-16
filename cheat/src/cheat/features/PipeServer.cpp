@@ -9,7 +9,7 @@ namespace Cheat::Features
 	PipeServer::PipeServer()
 	{
 		HookManager::install(app::InteractiveCellManager_moc, InteractiveCellManager_moc_Hook);
-		HookManager::install(app::dyx_tbp, dyx_tbp_Hook);
+		HookManager::install(app::dnm_rmo, dnm_rmo_Hook);
 		CreateThread(nullptr, 0, PipeServerThread, nullptr, 0, nullptr);
 	}
 
@@ -19,16 +19,17 @@ namespace Cheat::Features
 			// Capture a pointer to the InteractiveCellManager instance
 			icmInstancePtr = __this;
 		}
+		LOG("InteractiveCellManager_moc_Hook called with a: %d", a);
 		CALL_ORIGIN(InteractiveCellManager_moc_Hook, __this, a, method);
 	}
 
-	void PipeServer::dyx_tbp_Hook(app::dyx* __this, int64_t a, MethodInfo* method)
+	void PipeServer::dnm_rmo_Hook(app::dnm* __this, int64_t a, MethodInfo* method)
 	{
-		if (dyxInstancePtr == nullptr) {
-			// Capture a pointer to the dyx instance
-			dyxInstancePtr = __this;
+		if (dnmInstancePtr == nullptr) {
+			// Capture a pointer to the dnm instance
+            dnmInstancePtr = __this;
 		}
-		CALL_ORIGIN(dyx_tbp_Hook, __this, a, method);
+		CALL_ORIGIN(dnm_rmo_Hook, __this, a, method);
 	}
 
     DWORD WINAPI PipeServer::PipeServerThread(LPVOID lpParam) {
@@ -60,11 +61,11 @@ namespace Cheat::Features
                     int64_t mapId;
                     int32_t cellId;
                     if (sscanf_s(buffer, xorstr("autopilot %lld"), &mapId) == 1) {
-                        if (dyxInstancePtr == nullptr) {
-                            LOG_ERROR(xorstr("dyx instance pointer is null!"));
+                        if (dnmInstancePtr == nullptr) {
+                            LOG_ERROR(xorstr("dnm instance pointer is null!"));
                         }
                         else {
-                            app::dyx_tbm(dyxInstancePtr, mapId, true, nullptr);
+                            app::dnm_rml(dnmInstancePtr, mapId, true, nullptr);
                         }
                     }
                     else if (sscanf_s(buffer, xorstr("clickcell %d"), &cellId) == 1) {

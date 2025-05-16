@@ -7,29 +7,50 @@
 using namespace app;
 
 // C# methods
-DO_APP_FUNC(0x034E4790, String*, Marshal_PtrToStringAnsi, (void* ptr, MethodInfo* method));
-DO_APP_FUNC(0x034E47B0, String*, Marshal_PtrToStringUni, (void* ptr, MethodInfo* method));
-DO_APP_FUNC(0x03625720, Type*, Type_GetType_3, (String* typeName, MethodInfo* method));
-DO_APP_FUNC(0x034F76D0, Type*, Assembly_GetType, (Assembly* __this, String* name, bool throwOnError, MethodInfo* method));
-DO_APP_FUNC(0x034F7BD0, Assembly*, Assembly_LoadWithPartialName, (String* partialName, MethodInfo* method));
+DO_APP_FUNC(0x033C6220, String *, Marshal_PtrToStringAnsi, (void* ptr, MethodInfo * method)); 
+
+DO_APP_FUNC(0x033C6240, String *, Marshal_PtrToStringUni, (void* ptr, MethodInfo * method)); 
+
+DO_APP_FUNC(0x03502710, Type *, Type_GetType_3, (String* typeName, MethodInfo * method));
+
+
+DO_APP_FUNC(0x033D8E90, Type *, Assembly_GetType, (Assembly * __this, String* name, bool throwOnError, MethodInfo * method)); 
+
+DO_APP_FUNC(0x033D93B0, Assembly *, Assembly_LoadWithPartialName, (String* partialName, MethodInfo * method)); 
 
 // Unity methods
-DO_APP_FUNC(0x046503D0, GameObject*, GameObject_Find, (String* name, MethodInfo* method));
-DO_APP_FUNC(0x04656C60, String*, Object_1_get_name, (Object_1* __this, MethodInfo* method));
-DO_APP_FUNC(0x046553B0, Object_1*, Object_1_FindObjectOfType, (Type* type, MethodInfo* method));
-DO_APP_FUNC(0x04655030, Object_1*, Object_1_FindAnyObjectByType, (Type* type, MethodInfo* method));
-DO_APP_FUNC(0x046B1C10, bool, Input_get_anyKey, (MethodInfo* method));
+DO_APP_FUNC(0x045067C0, GameObject *, GameObject_Find, (String* name, MethodInfo * method));
+
+
+DO_APP_FUNC(0x0450D000, String *, Object_1_get_name, (Object_1* __this, MethodInfo * method));
+
+
+DO_APP_FUNC(0x0450B750, Object_1 *, Object_1_FindObjectOfType, (Type* type, MethodInfo * method));
+
+
+DO_APP_FUNC(0x0450B3D0, Object_1 *, Object_1_FindAnyObjectByType, (Type* type, MethodInfo * method));
+
+
+DO_APP_FUNC(0x04566690, bool, Input_get_anyKey, (MethodInfo* method));
+
+
 
 // Update loop to hook
-DO_APP_FUNC(0x00622B50, void, AudioManagerListenerPositionProvider_Update, (void* __this, MethodInfo* method));
+DO_APP_FUNC(0x005F2F10, void, AudioManagerListenerPositionProvider_Update, (void* __this, MethodInfo* method));
+
+
 
 // Autopilot
-DO_APP_FUNC(0x00F4C540, void, dyx_tbp, (dyx* __this, int64_t a, MethodInfo* method));
-DO_APP_FUNC(0x00F4B800, void, dyx_tbm, (dyx* __this, int64_t a, bool b, MethodInfo* method));
+DO_APP_FUNC(0x0236B4E0, void, dnm_rmo, (dnm* __this, int64_t a, MethodInfo* method));
+
+DO_APP_FUNC(0x0236A9A0, void, dnm_rml, (dnm* __this, int64_t a, bool b, MethodInfo* method));
+
 
 // Click cell
-DO_APP_FUNC(0x015E4B70, void, InteractiveCellManager_moc, (InteractiveCellManager* __this, bool a, MethodInfo* method));
-DO_APP_FUNC(0x015E37C0, void, InteractiveCellManager_mnr, (InteractiveCellManager* __this, int32_t a, MethodInfo* method));
+DO_APP_FUNC(0x013B5600, void, InteractiveCellManager_moc, (InteractiveCellManager* __this, bool a, MethodInfo* method));
+
+DO_APP_FUNC(0x013B4430, void, InteractiveCellManager_mnr, (InteractiveCellManager* __this, int32_t a, MethodInfo* method));
+
 
 // Anti AFK
-DO_APP_FUNC(0x013DB980, void, InputChecker_Update, (InputChecker* __this, MethodInfo* method));
+DO_APP_FUNC(0x011BAA50, void, InputChecker_Update, (InputChecker * __this, MethodInfo * method));
