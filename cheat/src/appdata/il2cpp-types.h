@@ -3210,56 +3210,55 @@ namespace app
 		struct InputChecker__Fields fields;
 	};
 
-	struct dyx__VTable {
+	struct dnm__VTable {
 		VirtualInvokeData Equals;
 		VirtualInvokeData Finalize;
 		VirtualInvokeData GetHashCode;
 		VirtualInvokeData ToString;
-		VirtualInvokeData tbe;
+		VirtualInvokeData rmd;
 	};
 
-	struct dyx__StaticFields {
+	struct dnm__StaticFields {
 	};
 
-	struct dyx__Class {
+	struct dnm__Class {
 		Il2CppClass_0 _0;
 		Il2CppRuntimeInterfaceOffsetPair* interfaceOffsets;
-		struct dyx__StaticFields* static_fields;
+		struct dnm__StaticFields* static_fields;
 		const Il2CppRGCTXData* rgctx_data;
 		Il2CppClass_1 _1;
-		struct dyx__VTable vtable;
+		struct dnm__VTable vtable;
 	};
 
-	struct __declspec(align(8)) dyx__Fields {
-		bool _crns_k__BackingField;
-		bool crnt;
-		struct fav* crnu;
-		struct fag* crnv;
-		struct eve* crnw;
-		struct evb* crnx;
-		struct eus* crny;
-		struct etn* crnz;
-		struct euu* croa;
-		struct ewn* crob;
-		struct evr* croc;
-		struct evg* crod;
-		struct ewe* croe;
-		struct etf* crof;
-		struct ery* crog;
-		struct MapPositionsRoot* croh;
-		struct MapPositions* croi;
-		struct List_1_Core_PathFinding_WorldPathfinding_Edge_* croj;
-		int32_t crok;
-		struct gzg* crol;
-		int32_t crom;
-		struct gzy* cron;
-		struct ees* croo;
+	struct __declspec(align(8)) dnm__Fields {
+		bool _cpxt_k__BackingField;
+		bool cpxu;
+		struct eoc* cpxv;
+		struct enn* cpxw;
+		struct ejo* cpxx;
+		struct ejl* cpxy;
+		struct ejc* cpxz;
+		struct ehx* cpya;
+		struct eje* cpyb;
+		struct ekb* cpyc;
+		struct ejq* cpyd;
+		struct ekn* cpye;
+		struct ehq* cpyf;
+		struct egl* cpyg;
+		struct MapPositionsRoot* cpyh;
+		struct MapPositions* cpyi;
+		struct List_1_Core_PathFinding_WorldPathfinding_Edge_* cpyj;
+		int32_t cpyk;
+		struct gqi* cpyl;
+		int32_t cpym;
+		struct gra* cpyn;
+		struct dte* cpyo;
 	};
 
-	struct dyx {
-		struct dyx__Class* klass;
+	struct dnm {
+		struct dnm__Class* klass;
 		MonitorData* monitor;
-		struct dyx__Fields fields;
+		struct dnm__Fields fields;
 	};
 
 #if !defined(_GHIDRA_) && !defined(_IDA_)
