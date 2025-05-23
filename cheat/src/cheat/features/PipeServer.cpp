@@ -6,31 +6,32 @@
 
 namespace Cheat::Features
 {
-    PipeServer::PipeServer()
-    {
-        HookManager::install(app::InteractiveCellManager_moc, InteractiveCellManager_moc_Hook);
-        HookManager::install(app::dnm_rmo, dnm_rmo_Hook);
-        CreateThread(nullptr, 0, PipeServerThread, nullptr, 0, nullptr);
-    }
 
-    void PipeServer::InteractiveCellManager_moc_Hook(app::InteractiveCellManager* __this, bool a, MethodInfo* method)
-    {
-        if (icmInstancePtr == nullptr) {
-            // Capture a pointer to the InteractiveCellManager instance
-            icmInstancePtr = __this;
-        }
-        LOG("InteractiveCellManager_moc_Hook called with a: %d", a);
-        CALL_ORIGIN(InteractiveCellManager_moc_Hook, __this, a, method);
-    }
+	PipeServer::PipeServer()
+	{
+		HookManager::install(app::InteractiveCellManager_moc, InteractiveCellManager_moc_Hook);
+		HookManager::install(app::dnm_rmo, dnm_rmo_Hook);
+		CreateThread(nullptr, 0, PipeServerThread, nullptr, 0, nullptr);
+	}
 
-    void PipeServer::dnm_rmo_Hook(app::dnm* __this, int64_t a, MethodInfo* method)
-    {
-        if (dnmInstancePtr == nullptr) {
-            // Capture a pointer to the dnm instance
+	void PipeServer::InteractiveCellManager_moc_Hook(app::InteractiveCellManager* __this, bool a, MethodInfo* method)
+	{
+		if (icmInstancePtr == nullptr) {
+			// Capture a pointer to the InteractiveCellManager instance
+			icmInstancePtr = __this;
+		}
+		LOG("InteractiveCellManager_moc_Hook called with a: %d", a);
+		CALL_ORIGIN(InteractiveCellManager_moc_Hook, __this, a, method);
+	}
+
+	void PipeServer::dnm_rmo_Hook(app::dnm* __this, int64_t a, MethodInfo* method)
+	{
+		if (dnmInstancePtr == nullptr) {
+			// Capture a pointer to the dnm instance
             dnmInstancePtr = __this;
-        }
-        CALL_ORIGIN(dnm_rmo_Hook, __this, a, method);
-    }
+		}
+		CALL_ORIGIN(dnm_rmo_Hook, __this, a, method);
+	}
 
     DWORD WINAPI PipeServer::PipeServerThread(LPVOID lpParam) {
         il2cpp_thread_attach(il2cpp_domain_get());
