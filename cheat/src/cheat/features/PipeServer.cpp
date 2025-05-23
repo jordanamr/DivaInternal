@@ -6,6 +6,7 @@
 
 namespace Cheat::Features
 {
+
 	PipeServer::PipeServer()
 	{
 		HookManager::install(app::InteractiveCellManager_moc, InteractiveCellManager_moc_Hook);

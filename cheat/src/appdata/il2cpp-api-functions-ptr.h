@@ -5,7 +5,6 @@
 // ******************************************************************************
 // * IL2CPP API function pointers
 // ******************************************************************************
-
 #define il2cpp_add_internal_call_ptr 0x004BC600
 #define il2cpp_alloc_ptr 0x004BC610
 #define il2cpp_allocation_granularity_ptr 0x003358F0
