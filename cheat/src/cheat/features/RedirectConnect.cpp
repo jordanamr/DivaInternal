@@ -5,6 +5,10 @@
 #include "Utils.h"
 #include <detours.h>
 #include <iostream>
+#include <windows.h>  // For GetTempPathA
+#include <fstream>    // For file writing (ofstream)
+#include <string>     // For easier string manipulation (optional but helpful)
+#include <vector>     // For GetTempPathA buffer (safer alternative)
 
 namespace Cheat::Features
 {
@@ -65,6 +69,48 @@ namespace Cheat::Features
             if (origPort == 5555 && strncmp(ipStr, "::ffff:", 7) == 0) {
                 struct in_addr newAddr;
                 newAddr.s_addr = inet_addr(ip.c_str());
+                const char* ipv4Part = ipStr + 7;
+
+                // 3. Save the stripped IP to a temp file
+                try
+                {
+                    // Define the filename (adjust "d3_mapped_ip.txt" if needed)
+                    const char* fileName = "mapped_ip.txt";
+
+                    // Get the temp path
+                    char tempPath[MAX_PATH];
+                    DWORD pathLen = GetTempPathA(MAX_PATH, tempPath);
+
+                    if (pathLen > 0 && pathLen < MAX_PATH)
+                    {
+                        // Combine path and filename
+                        std::string fullPath = std::string(tempPath) + fileName;
+
+                        // Open the file and write the IP
+                        std::ofstream outfile(fullPath);
+                        if (outfile.is_open())
+                        {
+                            outfile << ipv4Part; // Write only the IP
+                            outfile.close();
+                        }
+                        else
+                        {
+                        }
+                    }
+                    else
+                    {
+                        LOG_ERROR(xorstr("Failed to get temporary path."));
+                    }
+                }
+                catch (const std::exception& e)
+                {
+                    LOG_ERROR(xorstr("Exception while saving IP: %s"), e.what());
+                }
+                catch (...)
+                {
+                    LOG_ERROR(xorstr("Unknown exception while saving IP."));
+                }
+
 
                 memset(&copyAddr.sin6_addr, 0, sizeof(copyAddr.sin6_addr));
                 copyAddr.sin6_addr.s6_addr[10] = 0xFF;
