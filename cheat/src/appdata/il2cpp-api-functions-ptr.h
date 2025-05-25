@@ -244,3 +244,4 @@
 #define il2cpp_unity_liveness_free_struct_ptr 0x004BDA30
 #define il2cpp_unity_set_android_network_up_state_func_ptr 0x004BDA40
 #define il2cpp_value_box_ptr 0x004BDA50
+
